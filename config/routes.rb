@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
- post 'login', to: 'sessions#login'
+ resources :sessions, only: [:login, :destroy]
+ resources :users, only: [:create, :show]
 end
